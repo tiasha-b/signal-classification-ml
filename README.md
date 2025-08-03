@@ -48,6 +48,67 @@ pip install numpy pandas matplotlib seaborn scikit-learn scipy joblib
     ├── signal_types_by_class.png      # Sample classified signal plot  
     └── README.md                      # Project documentation
 
+## 📊 Result Visualizations
+
+To test real-world robustness, noise was intentionally introduced into the signal data. These visualizations illustrate how well the classifier performs even under imperfect, noisy conditions.
+
+---
+
+### 1. Signal Types by Class
+
+Shows example signals from each class after FFT transformation.
+
+![Signal Types](signal_types_by_class_.png)
+
+- This plot visualizes the frequency spectrum for a sample from each of the three signal classes: **Coherent**, **Decohered**, and **Partial**.
+- You can see:
+  - **Coherent** signals show a sharp, clear frequency peak.
+  - **Decohered** signals appear flatter and noisier.
+  - **Partial** signals lie in between, often showing some structure with significant noise.
+- Helps understand what the model "sees" when making its decision.
+
+---
+
+### 2. Feature Importance (Random Forest)
+
+Highlights which FFT features the classifier relies on the most.
+
+![Feature Importance](feature_importance.png)
+
+- This bar plot shows the importance scores assigned to FFT frequency bins by the Random Forest.
+- Features around certain frequency ranges are significantly more influential, suggesting that key discriminative information lies in those bands.
+- Can be used for feature selection or interpretability.
+
+---
+
+### 3. Confusion Matrix
+
+Shows model predictions versus true labels.
+
+![Confusion Matrix](confusion_matrix.png)
+
+- **Diagonal values** show correct predictions; **off-diagonal** are misclassifications.
+- Summary:
+  - Coherent signals: 201 correct, 16 misclassified as Partial.
+  - Decohered signals: Perfectly classified — 197 correct.
+  - Partial signals: 155 correct, 31 misclassified as Coherent.
+- 🔍 **Insight**: Most confusion is between **Partial** and **Coherent**, likely due to overlapping spectral features.
+
+---
+
+### 4. PCA Projection of FFT Features
+
+Visualizes the FFT-based features reduced to 2D using PCA.
+
+![PCA FFT Plot](pca_fft_feature_plot.png)
+
+- Principal Component Analysis (PCA) is used here to project high-dimensional FFT features into 2D for visualization.
+- We see distinct clustering:
+  - **Decohered** signals form a separate, compact cluster.
+  - **Coherent** and **Partial** signals show some overlap — consistent with the confusion matrix findings.
+- Indicates that while the classes are generally separable, some fuzziness exists between Coherent and Partial.
+
+---
 
 
 
