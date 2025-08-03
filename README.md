@@ -9,6 +9,8 @@ The signals are generated to simulate different physical behaviors. Coherent sig
 
 From each signal, four key features are extracted: maximum amplitude, mean amplitude, standard deviation, and spectral entropy. These features are chosen to highlight both the structure and randomness present in each signal type.
 
+Note: Noise and randomness have been intentionally introduced in the simulated data to mimic real-world physical uncertainty, making the model more robust and industry-ready. This helps ensure the classifier handles non-ideal, noisy inputs as encountered in practical applications like medical signals, sensors, or quantum systems.
+
 A Random Forest classifier is trained on these features and delivers strong performance while remaining interpretable. The full pipeline includes:
 
 1. Simulating signals for each class: coherent, decohered, and partially decohered
