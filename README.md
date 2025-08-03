@@ -78,7 +78,7 @@ Visualizes the FFT-based features reduced to 2D using PCA.
 - Principal Component Analysis (PCA) is used here to project high-dimensional FFT features into 2D for visualization.
 - We see distinct clustering:
   - **Decohered** signals form a separate, compact cluster.
-  - **Coherent** and **Partial** signals show some overlap — consistent with the confusion matrix findings.
+  - **Coherent** and **Partial** signals show some overlap, which is consistent with the confusion matrix findings.
 - Indicates that while the classes are generally separable, some fuzziness exists between Coherent and Partial.
 
 
